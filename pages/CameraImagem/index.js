@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, TouchableOpacity, Image, Button } from 'react-native';
 import { Camera } from 'expo-camera';
 
-const ImagemCamera = () => {
+const CameraImagem = () => {
     const [hasPermission, setHasPermission] = useState(null);
 
-    // Definição da direção da camera 
+    // Direção da camera 
     const [type, setType] = useState(Camera.Constants.Type.back);
     const [imagemUri, setImagemUri] = useState(null);
   
-    // Pede a permissão para usar a camera
+    // Permicao para camera
     useEffect(() => {
       (async () => {
         const { status } = await Camera.requestPermissionsAsync();
@@ -27,7 +27,7 @@ const ImagemCamera = () => {
     const tirarFoto = async () => {
         if(camera){
             let foto = await camera.takePictureAsync();
-            alert('foto tirada');
+            alert('foto capturada');
             setImagemUri(foto.uri);
             console.log(foto);
         }
@@ -73,4 +73,4 @@ const ImagemCamera = () => {
     );
 }
 
-export default ImagemCamera;
+export default CameraImagem;

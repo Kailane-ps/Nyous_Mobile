@@ -20,7 +20,7 @@ const ItemContato = ({nome}) => {
    return(
         <View>
         <Text>{nome}</Text>
-        <Button onPress={() => alert(id)} title="Id do item"></Button>
+        <Button onPress={() => alert(id)} title="ID do item"></Button>
     </View>
    )
 }
